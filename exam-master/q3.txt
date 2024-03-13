@@ -1,0 +1,3 @@
+When defining Stack<E extends Collection<E>>, the parameter E is type bounded such that it must be something that extends the Collection interface. In the case of:
+    Stack<String> stack = new Stack<String>();
+String does not implement the Collection interface. Instead, if we wanted a stack of Strings, we'd need to provide a collection of Strings, e.g. Stack<List<String>> stack = new Stack<>();

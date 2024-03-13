@@ -1,0 +1,21 @@
+a) The main smell is the violation of the open close priniple through the use of a switch/conditional statement. Inside ConfluencePage in the method interact, there is a switch statement. This violates the Open Close principle as if a new status was to be introduced, we would have to add a new conditional branch. This is also violating the single responsibility princple, as ConfluencePage is responsible for handling each case, which could instead be handled by a singular class (such as a status class). 
+
+ci) A suitable design pattern would be the state pattern. Like Lab05, the interact method's functionality changes depending on what status (State) it is in. Hence, it is perfect for the state pattern, where each editting status is a state.
+
+In order to do this, I had to create new methods/modify existing ones, such as setters and getters, such that the different Statuses could change things about the Confluence page itself (such as content, title etc).
+
+Confluence Spaces:
+
+di) A suitable design pattern would be to use the Composite pattern. This is due to the fact that Spaces (compound nodes) can contain subnodes of either other Spaces or Pages (leaf nodes). 
+
+To calculate the number of pages, you'd calculate the number of pages in each subnode. If it is a leaf node, it should return 1 (as it is a page itself). Hence, we can use recursion. 
+
+Space Iterator:
+
+e) My design: 
+create a empty list (of ConfluencePages)
+Start from the top Confluence node:
+If the node is a Space, get all Pages linked to that node (by recursion, DFS).
+If the node is a Page, add itself to the list.
+
+Then returning an iterator for that final list.

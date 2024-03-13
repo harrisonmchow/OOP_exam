@@ -1,0 +1,5 @@
+a) 
+Adam is using the purely Incremental Design. He does not yet understand the full requirements but is going to build the base of the code, which should set him up well for when he knows the full problem. If he were using the Big Design Up Front, he would wait until everything about the problem was known before he'd start coding.
+
+b)
+A disadvantage is that his code could require refactoring after fully understanding the requirements. Without fully understanding the problem Adam is building a general solution which would provide the basis for his further work. However, there may be something in the requirements which makes Adam realise that a different design or method would be more efficient and result in less technical debt in the future. An example of this is our Dungeonmania assignment. The previous team built a code base not knowing the full requirements, and then when more of the spec was released, our team had to refactor the code as we realised there was a better way to do things and to set us up better for future iterations. 

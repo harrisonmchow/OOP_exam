@@ -1,0 +1,10 @@
+Smell 1: Repeated code. The code to iterate through the Devices and Satellites are the same. To solve this, you could create a generic function, where <E extends Entity> where Entity is the superclass to both Devices and Satellites. Similarly, you could have a list of Entities, and join the list of Devices and Satellites together such that you only need to iterate through a singular list. 
+
+Smell 2: Feature envy. All paramters for the EntityResponseInfo are related to the Device/Satellite, evident in the constant calls to getter methods. To solve this, we should move all functionality into the Device/Satellite class (or Entity class assuming we have that inheritence relationship). We could then create a method called createEntityInfoResponse() where it does everything as required. Then, in the loop, all we have to do is call that singular method once the id is found:
+Something like :
+
+for (Entity e: entityList) {
+    if (e.getId() == id) {
+        return e.createEntityInfoResponse();
+    }
+}

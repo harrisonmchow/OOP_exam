@@ -1,0 +1,9 @@
+Liskov Substitution Principle states that subclasses must be substitutable for their parent class. This means that in this case, COMP2511AssignmentIILatePenalty must be able to behave like StandardUNSWLatePenalty. In Design By Contract, the postconditions are what the contract guarantees after its execution. For these two principles to exist, a subclass must comply with the original contract, and can strengthen (but not weaken) post conditions. 
+In this instance, the post conditions are being strengthened. The normal penalty rate will be a maximum of the number of days late * 5 (ranging from 0 to days * 5), and the COMP2511 penalty rate is the number of days late * 2 , which is less than regular penalty rate. Hence, it is within the possible range of normal penalty rates calculated by the superclass so it is therefore strengthening post conditions (by providing a more specific result that still satisfies the superclass preconditions). Hence it is valid.
+
+e.g
+Apply normal late penalty after 4 days atmost = 4 * 5 = 20.
+Apply COMP2511 penalty after 4 days = 4 * 2 = 8. 
+
+Apply normal late penalty after 6 days atmost = 5 * 5 = 25.
+Apply COMP2511 penalty after 6 days = 6 * 2 = 12. 
